@@ -1,5 +1,6 @@
 package CH7Arrays;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class ArrayPractice {
@@ -26,6 +27,17 @@ public class ArrayPractice {
         int y = 5;
         int[] numbers2 = {1, 2, 3, 4, 5};
         System.out.println(Arrays.toString(numbers2));
+    randomArray();
+    }
 
+    public static void randomArray() {
+
+
+        int[] random = new int[(int) (Math.random() * 10)];
+        for (int i = 0; i < random.length; i++) {
+            random[i] = (int) (Math.random() * 10);
+
+        }
+        System.out.println(Arrays.toString(random));
     }
 }

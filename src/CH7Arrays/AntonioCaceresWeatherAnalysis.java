@@ -36,6 +36,9 @@ public class AntonioCaceresWeatherAnalysis {
         average = (Math.round(average * 10.0)) / 10.0; // round to the nearest tenth
         System.out.println("Average temp = " + average);
         compavg(average, days, num);
+        System.out.println();
+        System.out.println("Temperatures: " + Arrays.toString(days));
+        order(days, num);
     }
 
 
@@ -56,5 +59,10 @@ public class AntonioCaceresWeatherAnalysis {
 
 
         }
+    }
+    public static void order(int[] items, int num) {
+        System.out.println("Two coldest days: " + items[0] +", "+ items[1]);
+        System.out.println("Two hottest days: " + items[num-1] +", "+ items[num-2]);
+
     }
 }
