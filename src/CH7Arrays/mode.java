@@ -3,7 +3,7 @@ package CH7Arrays;
 public class mode {
     public static void main(String[] args) {
         int number = 11223344;
-        System.out.println("Mode is: " + mode2(number));
+        System.out.println("Mode is: " + efficientMode(number));
 
     }
 
@@ -75,11 +75,11 @@ public class mode {
 
     }
     //Justin's algorithm
-        public static int mode2(int num) {
+        public static int efficientMode(int num) {
             int[] array = new int[10];
             while (num > 0) {
-                int test = num % 10;
-                array[test]++;
+                int digit = num % 10;
+                array[digit]++;
                 num /= 10;
             }
             int max = array[0];
@@ -89,11 +89,8 @@ public class mode {
                     max = array[i];
                     index = i;
                 }
-
             }
             return index;
-
         }
-
     }
 

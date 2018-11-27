@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 //This program takes user input and calculates the mean temp.
 // for n-days The program also identifies how many days are above the mean
-public class AntonioCaceresWeatherAnalysis {
+public class AntonioCaceresWeatherAnalysisV2 {
     public static void main(String[] args) {
         //Step1: Ask for the number of days the user want(prerequisite: integer)
         Scanner console = new Scanner(System.in);
@@ -36,6 +36,9 @@ public class AntonioCaceresWeatherAnalysis {
         average = (Math.round(average * 10.0)) / 10.0; // round to the nearest tenth
         System.out.println("Average temp = " + average);
         compavg(average, days, num);
+        System.out.println();
+        System.out.println("Temperatures: " + Arrays.toString(days));
+        order(days, num);
     }
 
 
@@ -56,5 +59,10 @@ public class AntonioCaceresWeatherAnalysis {
 
 
         }
+    }
+    public static void order(int[] items, int num) {
+        System.out.println("Two coldest days: " + items[0] +", "+ items[1]);
+        System.out.println("Two hottest days: " + items[num-1] +", "+ items[num-2]);
+
     }
 }

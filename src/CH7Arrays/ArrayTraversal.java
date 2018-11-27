@@ -5,12 +5,23 @@ import java.util.Arrays;
 public class ArrayTraversal {
     public static void main(String[] args) {
         int [] array = {5, 8, 7, 12};
-        abbyAlgo(array);
-    }
-    public static void jonnyAlgo(int[] ja) {
+            abbyAlgo(array);
+            jonnyAlgo(array);
+
 
     }
-    public static void abbyAlgo(int[] aa) {
+    public static void jonnyAlgo(int[] ja) {
+        for (int i = 0; i < ja.length/2; i++) {
+            int temp = ja[i];
+            ja[i] = ja[ja.length - i - 1];
+        ja[ja.length-1 -i] = temp;
+
+        }
+        System.out.print(Arrays.toString(ja));
+
+    }
+
+    public static int [] abbyAlgo(int[] aa) {
         //Step 1: create a temp. variable for length
         int[] temp = new int [aa.length];
         //Step2: create an integer array of the same size
@@ -21,9 +32,7 @@ public class ArrayTraversal {
         }
         //Step4: set the original array equal to the temporary reversed one
         aa = temp;
-        System.out.println(Arrays.toString(aa));
-
-
+        return(aa);
 
     }
 }
