@@ -2,6 +2,7 @@ package CH7Arrays;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class AntonioCaceresSum {
@@ -69,14 +70,14 @@ public class AntonioCaceresSum {
         addCol(a);
     }
     public static void addCol(int[][] array){      //Adds columns
-        int colAt = array[0].length - 1, sum = 0, rest = 0;
+        int colAt = array[0].length - 1, sum = 0, part = 0;
         while(colAt > 0){
             for(int i = 0; i < array.length - 1; i++) {
                 sum += array[i][colAt];
             }
             if(sum >= 10) {         //Aligns numbers with 0's accordingly
-                rest = sum % 10;
-                array[array.length - 1][colAt] = rest;
+                part = sum % 10;
+                array[array.length - 1][colAt] = part;
                 sum = sum / 10;
                 array[array.length - 2][colAt - 1] = sum;
             }else{
