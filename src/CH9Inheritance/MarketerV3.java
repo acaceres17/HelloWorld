@@ -1,6 +1,10 @@
 package CH9Inheritance;
 
-public class MarketerV2 extends EmployeeV1{
+public class MarketerV3 extends EmployeeV3{
+    //** state fields and constructors are not inherited **
+    public MarketerV3(String name, int years) {
+        super(name, years);
+    }
     public double getSalary() {
         //I want to add 10000.0 to the base employee class
         return super.getSalary() + 10000.0; //$50,000 / year
